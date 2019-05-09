@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+  {% block content %}
+<div class="content" xmlns="http://www.w3.org/1999/html">
+      <div class="detailFilm">
+        <div class="poster">
+          <img src="{{ poster }}">
+        </div>
+        <div class="detail">
+          <div class="stills">
+            {% for item in stills %}
+            <img src="{{ item }}">
+            {% endfor %}
+          </div>
+          <div class="info">
+            <div class="infoLeft">
+              <p class="name"><a href="{{ link }}" target="_blank">Название: <span class="filmInfo">{{ title }}</span></a></p>
+              <p class="name">Год: <span class="filmInfo">{{ year }}</span></p>
+              <p class="name">Жанр: <span class="filmInfo">{{ genre }}</span></p>
+              <p class="name">Длительность: <span class="filmInfo">{{ length }}</span></p>
+              <p class="name">Дата релиза: <span class="filmInfo">{{ releaseDate }}</span></p>
+              <p class="name">Страны: <span class="filmInfo">{{ country }}</span></p>
+              <p class="name">Сюжет: <br><span class="filmInfo">{{ description }}</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list">
+        <h1>Раздачи на rutor.info</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Дата раздачи</th>
+              <th>Название</th>
+              <th>Размер</th>
+              <th>Раздают</th>
+              <th>Скачивают</th>
+              <th>Магнет</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for t in torrents %}
+            <tr>
+              <td class="rowTorr"><span class="dateTorr">{{ t['dateCreate'] }}</span></td>
+              <td class="rowTorr"><span class="nameTorr">{{ t['name'] }}</span></td>
+              <td class="rowTorr"><span class="sizeTorr">{{ t['size'] }}</span></td>
+              <td class="rowTorr"><span class="upTorr">{{ t['distibute'] }}</span></td>
+              <td class="rowTorr"><span class="downTorr">{{ t['download'] }}</span></td>
+              <td class="rowTorr">
+                <a class="magnetTorr" href="{{ t['magnetLink'] }}">
+                  <img src="{{ url('static', filename='images/magnet.png') }}">
+                </a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  {% endblock %}

@@ -1,0 +1,7 @@
+# Default configuration file
+
+site_name: 'Movies Releases'
+
+# Server setting
+host: 'localhost'
+port: 8888

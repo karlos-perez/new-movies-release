@@ -1,0 +1,208 @@
+body {
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  background: url('../images/background.png');
+  background-size: 100%;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+footer, nav, header, section, aside {
+  display: block
+}
+
+#imgError {
+	display: block;
+	margin: auto;
+}
+
+#wrapper {
+  
+}
+
+#colLeft {
+
+}
+
+#colRight {
+
+}
+
+header {
+  height: 30px;
+}
+
+.content {
+  margin: 0 20px 0 20px;
+}
+
+.content h1 {
+  text-align: center;
+	font-size: 22px;
+}
+
+.film-wrapper {
+    display: block;
+    height: 500px;
+  	width: 100%;
+	  float: left;
+  	transition: width .2s;
+/*   border: 1px solid #b5e9a7;
+	border-radius: 3px; */
+  
+}
+
+@media only screen and (min-width: 450px) {
+	.film-wrapper {
+		width: 50%;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.film-wrapper {
+		width: 33.333%;
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	.film-wrapper {
+		width: 20%;
+	}
+}
+
+.film {
+	display: block;
+	position: relative;
+	margin: 0 20px 20px 0;
+	text-decoration: none;
+	color: #474747;
+	z-index: 0;
+	height: 250px;
+}
+
+.films {
+	list-style: none;
+	margin: 0 -20px 0 0;
+	padding: 0;
+}
+
+.film-photo {
+	position: relative;
+	padding-bottom: 100%;
+	overflow: hidden;
+}
+
+.film-photo img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+	transition: transform .4s ease-out;
+}
+
+.film:hover .film-photo img {
+	transform: scale(1.05);
+}
+
+.filmDetails {
+    padding: 15px;
+}
+
+.filmDetails p {
+	position: relative;
+	margin: 0;
+	font-size: 12px;
+	overflow: hidden;
+  color: #555;
+}
+
+.filmDetails span {
+  font-size: 14px;
+  color: #000
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.poster {
+  padding: 5px;
+  float: left;
+}
+
+.poster img{
+  width: 360px;
+  height: 520px;
+}
+
+.detail {
+  padding: 5px;
+  margin: auto;
+  width: auto;
+}
+
+.info {
+	padding: 10px;
+}
+
+.infoLeft p {
+	line-height: 20px;
+	padding-left: 15px;
+  position: relative;
+	margin: 0;
+	font-size: 12px;
+  overflow: hidden;
+  color: #000;
+}
+
+.filmInfo {
+  font-size: 14px;
+}
+
+
+.list {
+	clear:left;
+	width:100%;
+  padding: 5px;
+  margin: auto;
+  font-size: 12px;
+}
+
+.list table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list thead {
+  background-color: #0484b5;
+}
+
+.list td {
+  padding: 0 15px 0 15px;
+}
+
+
+
+
+
+
+
+

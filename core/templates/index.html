@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+    {% block content %}
+    <h1>
+      Релизы фильмов за последний месяц ({{ amount }})
+    </h1>
+    <div class="content">
+      {% for item in releases %}
+        <ul class="films clearfix">
+          <li class="film-wrapper">
+		    <a href="/{{ item['id'] }}" class="film">
+              <div class="film-photo">
+              	<img src="{{ item['poster'] }}" alt="">
+              </div>
+            </a>
+            <div class="filmDetails">
+              <p class="filmDetail">Название: <span class="filmInfo">{{ item['title'] }}</span></p>
+              <p class="filmDetail">Год: <span class="filmInfo">{{ item['year'] }}</span></p>
+              <p class="filmDetail">Дата релиза: <span class="filmInfo">{{ item['releaseDate'] }}</span></p>
+              <p class="filmDetail">Страна: <span class="filmInfo">{{ item['countries'] }}</span></p>
+              <p class="filmDetail">Жанр: <span class="filmInfo">{{ item['genres'] }}</span></p>
+              <p class="filmDetail">Длительность: <span class="filmInfo">{{ item['duration'] }} мин.</span></p>
+            </div>
+	      </li>
+        </ul>
+      {% endfor%}
+    </div>
+    {% endblock %}

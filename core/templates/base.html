@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url('static', filename='css/style.css') }}"/>
+    <link rel="shortcut icon" href="{{ url('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <title>{{ site_name }}</title>
+    {% endblock %}
+</head>
+<body>
+    <header id="headerInner"></header>
+    <section id="wrapper">
+        <aside id="colLeft"></aside>
+        <article class="content">{% block content %}{% endblock %}</article>
+        <aside id="colRight"></aside>
+    </section>
+    <footer id="footerInner"></footer>
+</body>
+</html>
