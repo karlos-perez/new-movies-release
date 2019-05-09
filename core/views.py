@@ -27,7 +27,11 @@ async def index(request):
 @template('detail.html')
 async def filmDetals(request):
     idFilm = request.match_info.get('filmID')
-    result = await get_film(request.app, idFilm)
+    if idFilm and idFilm.isdigit():
+        result = await get_film(request.app, int(idFilm))
+    else:
+        logs.error(f'filmID is not integer: {type(idFilm)} - {idFilm}')
+        raise web.HTTPNotFound(text=f'filmID is not integer')
     if result:
         torrents = await rutorTorrents(request.app, idFilm)
         result['torrents'] = torrents
